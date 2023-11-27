@@ -2,6 +2,7 @@ import user from './profile/user.json'
 import data from './statistics/data.json'
 import friends from './friendList/friends.json'
 import transactions from './transactions/transactions.json'
+
 import Profile from './profile/Profile'
 import Statistics from './statistics/Statistics.jsx'
 import FriendList  from './friendList/FriendList.jsx'
@@ -20,16 +21,10 @@ export const App = () => {
         
       }}
     >
-     <Profile
-         username={user.username}
-         tag={user.tag}
-         location={user.location}
-         avatar={user.avatar}
-         stats={user.stats}
-      />
-     <Statistics title="Upload stats" stats={data} />
-      <FriendList friends={friends} />
-     <TransactionHistory items={transactions} />
+     <Profile userData={user}/>
+     <Statistics title="Upload stats" data={data} />
+     <FriendList friends={friends} />
+     <TransactionHistory transactions={transactions} />
     </div>
   );
 };
